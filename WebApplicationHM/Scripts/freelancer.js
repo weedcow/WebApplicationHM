@@ -1,16 +1,26 @@
 // Freelancer Theme JavaScript
 
-(function($) {
+(function ($) {
+
     "use strict"; // Start of use strict
 
-    // jQuery for page scrolling feature - requires jQuery Easing plugin
-    $('.page-scroll a').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: ($($anchor.attr('href')).offset().top - 50)
-        }, 1250, 'easeInOutExpo');
-        event.preventDefault();
+    
+    $('a[href*=#]').on('click', function (event) {
+        if (window.location.hash) {
+            event.preventDefault();
+            $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000, 'easeInOutExpo');
+        }
     });
+    // *only* if we have anchor on the url
+     if(window.location.hash) {
+
+         // smooth scroll to the anchor id
+         $('html, body').animate({
+             scrollTop: $(window.location.hash).offset().top + 'px'
+         }, 1000, 'easeInOutExpo');
+     }
+    
+
 
     // Highlight the top nav as scrolling occurs
     $('body').scrollspy({

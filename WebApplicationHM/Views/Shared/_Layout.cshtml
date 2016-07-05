@@ -33,7 +33,9 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">@ViewBag.Title</a>
+                @*<a class="navbar-brand" href="">@ViewBag.Title</a>*@
+                
+                    @Html.ActionLink("HAMY", "Index", "Home", protocol: null, hostName: null, fragment: null, routeValues: null, htmlAttributes: new { @class = "navbar-brand"})
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -42,11 +44,15 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
+                        @Html.ActionLink("Portfolio", "Index", "Home", protocol: null, hostName: null, fragment: "portfolio", routeValues: null, htmlAttributes: null)
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">About</a>
+                        @Html.ActionLink("About", "Index", "Home", protocol: null, hostName: null, fragment: "about", routeValues: null, htmlAttributes: null)
+                      
+                    <li>
+                        @Html.ActionLink("Family", "Family")
                     </li>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -124,7 +130,7 @@
     <script src="~/Scripts/jqBootstrapValidation.js"></script>
     <script src="~/Scripts/contact_me.js"></script>
     <!-- Theme JavaScript -->
-    <script src="~/Scripts/freelancer.min.js"></script>
+    <script src="~/Scripts/freelancer.js"></script>
     
 </body>
 </html>

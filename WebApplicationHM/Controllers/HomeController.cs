@@ -14,5 +14,10 @@ namespace WebApplicationHM.Controllers
             
             return View();
         }
+
+        public ActionResult Family()
+        {
+            return View();
+        }
     }
 }
