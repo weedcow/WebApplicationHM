@@ -8,13 +8,13 @@ using WebApplicationHM.DAL;
 
 namespace WebApplicationHM.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : AppController
     {
         HamyDataContext database = new HamyDataContext();
         // GET: Home
         public ActionResult Index()
         {
-            
+            ViewBag.Country = CurrentUser.Country;
             return View();
         }
 
